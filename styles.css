@@ -1,0 +1,116 @@
+:root {
+    --bg-color: #000000;
+    --card-bg: #1a1a1a;
+    --neon-red: #ff0000;
+    --text-white: #ffffff;
+    --price-yellow: #f1c40f;
+    --neon-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-white);
+    font-family: 'Roboto', sans-serif;
+    max-width: 500px; /* Simula vista móvil en desktop */
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+.neon-text {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    color: var(--text-white);
+    text-shadow: var(--neon-shadow);
+    margin-bottom: 15px;
+}
+
+.hero-banner img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+/* Navegación */
+.categories {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 10px;
+    position: sticky;
+    top: 0;
+    background: var(--bg-color);
+    z-index: 10;
+}
+
+.nav-btn {
+    background: transparent;
+    border: 2px solid var(--neon-red);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 25px;
+    font-family: 'Oswald', sans-serif;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 0.8rem;
+}
+
+.nav-btn.active, .nav-btn:hover {
+    background: var(--neon-red);
+    box-shadow: var(--neon-shadow);
+}
+
+/* Tarjetas de Producto */
+#menu-container {
+    padding: 15px;
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--neon-red);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    gap: 15px;
+    transition: transform 0.2s;
+}
+
+.card-info {
+    flex: 1;
+}
+
+.card-info h3 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.card-info p {
+    font-size: 0.85rem;
+    color: #bbb;
+    margin-bottom: 10px;
+}
+
+.price {
+    color: var(--price-yellow);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}

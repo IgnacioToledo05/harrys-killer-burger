@@ -1,10 +1,9 @@
 :root {
     --bg-color: #000000;
-    --card-bg: #1a1a1a;
+    --card-bg: #000000; /* Fondo negro como la foto */
     --neon-red: #ff0000;
     --text-white: #ffffff;
-    --price-yellow: #f1c40f;
-    --neon-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.5);
+    --price-yellow: #ffffff; /* Precios en blanco según tu foto */
 }
 
 * {
@@ -17,34 +16,45 @@ body {
     background-color: var(--bg-color);
     color: var(--text-white);
     font-family: 'Roboto', sans-serif;
-    max-width: 500px; /* Simula vista móvil en desktop */
+    max-width: 450px; /* Tamaño ideal de celular */
     margin: 0 auto;
-    padding-bottom: 50px;
+    background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://www.transparenttextures.com/patterns/black-thread.png'); /* Textura de fondo sutil */
 }
 
+/* TÍTULO ESTILO FOTO */
 header {
     text-align: center;
-    padding: 20px;
+    padding: 30px 10px 10px 10px;
 }
 
-.neon-text {
+.header-title {
     font-family: 'Oswald', sans-serif;
-    font-size: 2.5rem;
-    color: var(--text-white);
-    text-shadow: var(--neon-shadow);
-    margin-bottom: 15px;
+    font-size: 2.3rem;
+    font-weight: 700;
+    letter-spacing: -1px; /* Letras compactas como la imagen */
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.header-line {
+    width: 160px;
+    height: 4px;
+    background: var(--neon-red);
+    margin: 5px auto 25px auto;
+    box-shadow: 0 0 15px var(--neon-red);
 }
 
 .hero-banner img {
-    width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    width: 90%;
+    border-radius: 8px;
+    border: 1px solid #333;
 }
 
-/* Navegación */
+/* BOTONES RECTANGULARES */
 .categories {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 8px;
     padding: 20px 10px;
     position: sticky;
     top: 0;
@@ -54,37 +64,40 @@ header {
 
 .nav-btn {
     background: transparent;
-    border: 2px solid var(--neon-red);
+    border: 1.5px solid var(--neon-red);
     color: white;
-    padding: 10px 15px;
-    border-radius: 25px;
+    padding: 8px 12px;
+    border-radius: 4px;
     font-family: 'Oswald', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: 0.3s;
-    font-size: 0.8rem;
 }
 
-.nav-btn.active, .nav-btn:hover {
+.nav-btn.active {
     background: var(--neon-red);
-    box-shadow: var(--neon-shadow);
+    box-shadow: 0 0 10px var(--neon-red);
 }
 
-/* Tarjetas de Producto */
+/* TARJETAS ESTILO "SQUAD DE CARNES" */
 #menu-container {
-    padding: 15px;
+    padding: 10px;
 }
 
 .card {
     background: var(--card-bg);
-    border: 1px solid var(--neon-red);
-    border-radius: 12px;
+    border: 1.5px solid #333; /* Borde gris oscuro inicial */
+    border-radius: 8px;
     display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+    flex-direction: row;
+    margin-bottom: 15px;
     padding: 15px;
-    gap: 15px;
-    transition: transform 0.2s;
+    position: relative;
+    overflow: hidden;
 }
+
+/* Borde rojo solo si querés resaltar algunas, o para todas: */
+.card { border-color: #444; } 
 
 .card-info {
     flex: 1;
@@ -92,25 +105,28 @@ header {
 
 .card-info h3 {
     font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
     text-transform: uppercase;
-    margin-bottom: 5px;
+    margin-bottom: 2px;
 }
 
 .card-info p {
-    font-size: 0.85rem;
-    color: #bbb;
+    font-size: 0.75rem;
+    color: #888;
     margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
 .price {
-    color: var(--price-yellow);
-    font-weight: bold;
-    font-size: 1.2rem;
+    font-family: 'Oswald', sans-serif;
+    color: var(--text-white);
+    font-size: 1.4rem;
+    font-weight: 700;
 }
 
 .card img {
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 90px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 4px;
 }
